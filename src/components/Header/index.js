@@ -4,9 +4,9 @@ import styles from './styles.scss';
 
 const Header = () => {
     return (
-        <header className={styles.Header}>
+        <header className={styles.Header}> {/* these styles leave in header folder */}
           <img src={logo} className={styles.HeaderLogo} alt="logo" />
-          <h1 className={styles.HeaderTitle}>Welcome to React</h1>
+          <h1 className={styles.HeaderTitle}>Welcome to Awesome React Calculator</h1>
         </header>
     );
 };
