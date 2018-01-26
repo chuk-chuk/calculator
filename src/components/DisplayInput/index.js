@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import styles from './styles.scss';
 
 class DisplayInput extends Component {
+  constructor(props){
+    super(props);
+    this.state = {value: ' '};
+
+  }
+
   render() {
     return (
       <div>
-        <p>Field shows input typed here</p>
+        <input className={ styles.Result } type="text" value={ this.props.displayValue }/>
       </div>
     );
   }

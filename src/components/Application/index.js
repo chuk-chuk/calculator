@@ -8,16 +8,33 @@ import DisplayOutput from '../DisplayOutput';
 import ButtonsLayout from '../ButtonsLayout';
 
 class Application extends Component {
+  constructor(){
+    super();
+    this.state = {
+      clickedButton: '',
+    }
+    this.handleClick = this.handleClick.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+
+  handleClick(e){
+    this.setState({ clickedButton: e.target.value });
+  }
+
+  handleReset(){
+    this.setState({clickedButton: ''});
+  }
+
   render() {
     return (
-      <div className={styles.Application}> {/* these styles leave in application folder */}
+      <div>
         <Header />
-        <p className={styles.ApplicationIntro}> {/* these styles leave in application folder */}
-          To get started, edit <code>src/Application.js</code> and save to reload.
-        </p>
-        <DisplayInput />
+        <div className={styles.Application}> {/* these styles leave in application folder */}
+          <p>GET STARTED HERE</p>
+        <DisplayInput displayValue={ this.state.clickedButton }/>
         <DisplayOutput />
-        <ButtonsLayout />
+        <ButtonsLayout getValue={ this.handleClick } resetValue={ this.handleReset } />
+        </div>
         <Footer />
       </div>
     );

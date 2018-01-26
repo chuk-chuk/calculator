@@ -5,7 +5,7 @@ class DisplayOutput extends Component {
   render() {
     return (
       <div>
-        <p>Field shows result based on the operation used here</p>
+        <input className={ styles.Result } type="text" value="Result"/>
       </div>
     );
   }
