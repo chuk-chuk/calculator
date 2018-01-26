@@ -1,7 +1,15 @@
 .Application {
+  width:300px;
+  height:525px;
+  background:gray;
+  margin:30px auto;
   text-align: center;
+  -webkit-animation:bgChange 2s 2s alternate infinite;
+  transition: all 2s ease;
 }
 
-.ApplicationIntro {
-  font-size: large;
+@-webkit-keyframes bgChange {
+  0% {background:#24b4de;}
+  50% {background:#17a928;}
+  100% {background:#399cb9;}
 }
