@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header className={styles.Header}> {/* these styles leave in header folder */}
           <img src={logo} className={styles.HeaderLogo} alt="logo" />
-          <h1 className={styles.HeaderTitle}>Welcome to Awesome React Calculator</h1>
+          <h3 className={styles.HeaderTitle}>Welcome to Awesome React Calculator</h3>
         </header>
     );
 };

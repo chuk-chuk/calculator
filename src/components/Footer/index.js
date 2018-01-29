@@ -4,7 +4,7 @@ import styles from './styles.scss';
 const Footer = () => {
   return(
     <footer className={ styles.FooterWrapper }>
-      <h3>I am your footer - style me</h3>
+      <h5>&copy; Awesome Calculator by Yulia</h5>
     </footer>
   )
 }

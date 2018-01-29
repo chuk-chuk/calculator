@@ -11,18 +11,31 @@ class Application extends Component {
   constructor(){
     super();
     this.state = {
-      clickedButton: '',
+      clickedButton1: '',
+      resultBox: '',
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleReset = this.handleReset.bind(this);
   }
 
   handleClick(e){
-    this.setState({ clickedButton: e.target.value });
+    const value = e.target.value;
+    switch(value) {
+      case '=': {
+        const answer = eval(this.state.clickedButton1).toString();
+        this.setState({ resultBox: answer });
+        break;
+      }
+
+      default: {
+        this.setState({ resultBox: this.state.clickedButton1 += value });
+        break;
+      }
+    }
   }
 
   handleReset(){
-    this.setState({clickedButton: ''});
+    this.setState({clickedButton1:''});
   }
 
   render() {
@@ -31,9 +44,11 @@ class Application extends Component {
         <Header />
         <div className={styles.Application}> {/* these styles leave in application folder */}
           <p>GET STARTED HERE</p>
-        <DisplayInput displayValue={ this.state.clickedButton }/>
-        <DisplayOutput />
-        <ButtonsLayout getValue={ this.handleClick } resetValue={ this.handleReset } />
+        <DisplayInput displayValue1={ this.state.clickedButton1 }/>
+        <DisplayOutput displayValue1={ this.state.resultBox }/>
+        <ButtonsLayout
+          getValue1={ this.handleClick }
+          resetValue={ this.handleReset } />
         </div>
         <Footer />
       </div>
