@@ -28,7 +28,7 @@ class Application extends Component {
       }
 
       default: {
-        this.setState({ resultBox: this.state.clickedButton1 += value });
+        this.setState({ clickedButton1: this.state.clickedButton1 += value });  //adding to the string!!
         break;
       }
     }
@@ -36,6 +36,7 @@ class Application extends Component {
 
   handleReset(){
     this.setState({clickedButton1:''});
+    this.setState({resultBox:''});
   }
 
   render() {
