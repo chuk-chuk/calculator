@@ -44,7 +44,6 @@ class Application extends Component {
       <div>
         <Header />
         <div className={styles.Application}> {/* these styles leave in application folder */}
-          <p>GET STARTED HERE</p>
         <DisplayInput displayValue1={ this.state.clickedButton1 }/>
         <DisplayOutput displayValue1={ this.state.resultBox }/>
         <ButtonsLayout
