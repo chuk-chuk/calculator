@@ -3,8 +3,7 @@ import styles from './styles.scss';
 
 import Header from '../Header';
 import Footer from '../Footer';
-import DisplayInput from '../DisplayInput';
-import DisplayOutput from '../DisplayOutput';
+import InputField from '../InputField';
 import ButtonsLayout from '../ButtonsLayout';
 
 class Application extends Component {
@@ -44,8 +43,8 @@ class Application extends Component {
       <div>
         <Header />
         <div className={styles.Application}> {/* these styles leave in application folder */}
-        <DisplayInput displayValue={ this.state.clickedButton }/>
-        <DisplayOutput displayValue={ this.state.resultBox }/>
+        <InputField displayValue={ this.state.clickedButton }/>
+        <InputField displayValue={ this.state.resultBox }/>
         <ButtonsLayout
           getValue={ this.handleClick }
           resetValue={ this.handleReset } />

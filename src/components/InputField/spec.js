@@ -1,7 +1,7 @@
 import React from 'react';
-import DisplayOutput from './';
+import InputField from './';
 
-describe('DisplayOutput', () => {
+describe('InputField', () => {
 
   it('renders without crashing', () => {
 
