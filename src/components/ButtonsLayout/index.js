@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import styles from './styles.scss';
 
 class ButtonsLayout extends Component {
-  constructor(props){
-    super(props);
-  }
+
 //replace * with x when multiply
 //same for devide / with division symbol
 //validation input only numbers or valid operators
-//naming
 //button functions by types
 
   render() {
+
     return (
       <div>
         <div className={ styles.Rows }>

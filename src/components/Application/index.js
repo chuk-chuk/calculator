@@ -22,7 +22,7 @@ class Application extends Component {
     const value = e.target.value;
     switch(value) {
       case '=': {
-        const answer = eval(this.state.clickedButton).toString(); //string
+        const answer = eval(this.state.clickedButton).toString();
         this.setState({ resultBox: answer });
         break;
       }

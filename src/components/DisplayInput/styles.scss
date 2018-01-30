@@ -1,32 +1,21 @@
 .Result {
-  width: 230px;
+  width: 218px;
   height: 50px;
-  margin: 40px auto;
+  margin: 10px auto;
+  padding-top: 10px;
   text-align: right;
+  display: block;
+  font-family: sans-serif;
   border: 0;
   font-size: 30px;
-  margin-left: 5px;
+  margin-left: 43px;
   overflow: hidden;
   letter-spacing: 4px;
-  width: 72%;
   outline: none;
+  background: black;
+  color: white;
 }
-//DIV STYLE instead of INPUT
+
 // .Result {
-//     display:block;
-//     font-family: sans-serif;
-//     width:220px;
-//     height:40px;
-//     margin:10px auto;
-//     text-align: right;
-//     border:0;
-//     background:#3b3535;
-//     color:#fff;
-//     padding-top:20px;
-//     font-size:20px;
-//     margin-left: 42px;
-//     outline: none;
-//     overflow: hidden;
-//     letter-spacing: 4px;
-//     top:10px;
+//   @include inputStyles;
 // }

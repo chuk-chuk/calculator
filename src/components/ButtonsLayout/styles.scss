@@ -9,12 +9,13 @@
   margin-left:5px;
   border-radius:4px;
   outline: none;
-}
 
-.BtnStyle:hover {
-  background-color: #000;
-  color: #fff;
-  font-weight: bolder;
+  &:hover {
+    background-color: #000;
+    color: #fff;
+    font-weight: bolder;
+  }
+
 }
 
 .Operation:hover {
