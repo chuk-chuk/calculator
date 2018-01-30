@@ -9,7 +9,7 @@ class DisplayInput extends Component {
   render() {
     return (
       <div>
-        <input className={ styles.Result } type="text" value={ this.props.displayValue1 } />
+        <input className={ styles.Result } type="text" value={ this.props.displayValue } />
       </div>
     );
   }

@@ -11,7 +11,7 @@ class Application extends Component {
   constructor(){
     super();
     this.state = {
-      clickedButton1: '',
+      clickedButton: '',
       resultBox: '',
     }
     this.handleClick = this.handleClick.bind(this);
@@ -22,20 +22,20 @@ class Application extends Component {
     const value = e.target.value;
     switch(value) {
       case '=': {
-        const answer = eval(this.state.clickedButton1).toString();
+        const answer = eval(this.state.clickedButton).toString(); //string
         this.setState({ resultBox: answer });
         break;
       }
 
       default: {
-        this.setState({ clickedButton1: this.state.clickedButton1 += value });  //adding to the string!!
+        this.setState({ clickedButton: this.state.clickedButton += value });  //adding to the string!!
         break;
       }
     }
   }
 
   handleReset(){
-    this.setState({clickedButton1:''});
+    this.setState({clickedButton:''});
     this.setState({resultBox:''});
   }
 
@@ -44,10 +44,10 @@ class Application extends Component {
       <div>
         <Header />
         <div className={styles.Application}> {/* these styles leave in application folder */}
-        <DisplayInput displayValue1={ this.state.clickedButton1 }/>
-        <DisplayOutput displayValue1={ this.state.resultBox }/>
+        <DisplayInput displayValue={ this.state.clickedButton }/>
+        <DisplayOutput displayValue={ this.state.resultBox }/>
         <ButtonsLayout
-          getValue1={ this.handleClick }
+          getValue={ this.handleClick }
           resetValue={ this.handleReset } />
         </div>
         <Footer />
