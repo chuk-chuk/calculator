@@ -13,12 +13,11 @@ class Application extends Component {
       clickedButton: '',
       resultBox: '',
     }
-    this.handleClick = this.handleClick.bind(this);
-    this.handleReset = this.handleReset.bind(this);
   }
 
-  handleClick(e){
-    const value = e.target.value;
+  handleClick = (e) => {
+    console.log('sdsfsfsfsfsef24f24f2ecwcv' + e);
+    const value = e;
     switch(value) {
       case '=': {
         const answer = eval(this.state.clickedButton).toString();
@@ -33,7 +32,7 @@ class Application extends Component {
     }
   }
 
-  handleReset(){
+  handleReset = () => {
     this.setState({clickedButton:''});
     this.setState({resultBox:''});
   }
@@ -43,8 +42,10 @@ class Application extends Component {
       <div>
         <Header />
         <div className={styles.Application}> {/* these styles leave in application folder */}
-        <InputField displayValue={ this.state.clickedButton }/>
-        <InputField displayValue={ this.state.resultBox }/>
+        <div className={styles.InputFields}>
+          <InputField displayValue={ this.state.clickedButton }/>
+          <InputField displayValue={ this.state.resultBox }/>
+        </div>
         <ButtonsLayout
           getValue={ this.handleClick }
           resetValue={ this.handleReset } />
