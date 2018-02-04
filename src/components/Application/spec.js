@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from '../Header';
 import Footer from '../Footer';
+import InputField from '../InputField';
 import Application from '../Application';
 
 import { shallow } from 'enzyme';
@@ -22,4 +23,9 @@ describe('<Application />', () => {
     const wrapper = shallow(<Application />);
     expect(wrapper.find(Footer).length).toBe(1);
   });
+
+  it('renders two <InputField /> components', () =>{
+    const wrapper = shallow(<Application />);
+    expect(wrapper.find(InputField).length).toBe(2);
+  })
 });

@@ -1,4 +1,4 @@
-# Calculator
+# Calculator ➕ 🔢 ➗
 
 A simple lightweight react project made using react-create-app
 
