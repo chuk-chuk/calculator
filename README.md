@@ -14,3 +14,9 @@ A simple lightweight react project made using react-create-app
 - ESLinting with AirBnB
 - CSS Modules
 - SASS
+
+##Debugging
+- React-logger
+
+##State Management
+- Redux
