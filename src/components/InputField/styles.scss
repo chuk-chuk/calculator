@@ -1,21 +1,7 @@
-// @import "../../global/mixins";
+@import "../../global/mixins";
 @import "../../global/variables";
 
 .Result {
-  // @import inputStyles;
-  height: 50px;
-  margin: 10px 40px;
-  padding: 10px;
-  text-align: right;
-  display: block;
-  font-family: sans-serif;
-  border: 0;
-  font-size: 30px;
-  margin-left: 43px;
-  overflow: hidden;
-  letter-spacing: 4px;
-  outline: none;
-  background: $backgroundHeaderInput;
-  color: white;
-  border-radius: 7px;
+  @include inputStyles;
+  
 }

@@ -4,4 +4,25 @@
   margin-left:5px;
   border-radius:4px;
   outline: none;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+    font-weight: bolder;
+  }
+
+}
+
+.Operation:hover {
+  background-color: #6542f4;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.BigButton {
+  width:105px;
+  height:50px;
+  margin-left:5px;
+  border-radius:4px;
+  outline: none;
 }

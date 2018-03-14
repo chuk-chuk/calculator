@@ -16,7 +16,6 @@ class Application extends Component {
   }
 
   handleClick = (e) => {
-    console.log('sdsfsfsfsfsef24f24f2ecwcv' + e);
     const value = e;
     switch(value) {
       case '=': {
@@ -42,13 +41,14 @@ class Application extends Component {
       <div>
         <Header />
         <div className={styles.Application}> {/* these styles leave in application folder */}
-        <div className={styles.InputFields}>
-          <InputField displayValue={ this.state.clickedButton }/>
-          <InputField displayValue={ this.state.resultBox }/>
-        </div>
-        <ButtonsLayout
-          getValue={ this.handleClick }
-          resetValue={ this.handleReset } />
+            <div className={styles.InputFields}>
+              <InputField displayValue={ this.state.clickedButton }/>
+              <InputField displayValue={ this.state.resultBox }/>
+            </div>
+            <ButtonsLayout
+              getValue={ this.handleClick }
+              resetValue={ this.handleReset }
+            />
         </div>
         <Footer />
       </div>
