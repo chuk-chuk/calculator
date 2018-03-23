@@ -1,20 +1,38 @@
 import { createStore } from 'redux';
 
-
-export default function calculator(state = 0, action){
-  switch (action.type) {
-    case 'addNumberToStore':
-      return parseInt(action.number)
-      break;
-    default:
-
-  }
+const initialState = {
+  input: "",
+  result: ""
 }
 
-//action creator // named export
-export function addNumberToStore(number){
-  return {
-    type: 'addNumberToStore',
-    number: number
+export default function calculator(state = initialState, action){
+  console.log("ACTION", action.number);
+  console.log("STATE", state.input);
+  console.log("TYPE", action.type);
+  switch (action.type) {
+    case 'ADD_NUMBER_TO_STORE':
+    return{
+      ...state,
+      input: state.input + action.number
+    };
+    case 'ADD_TO_STRING':
+    return{
+      ...state,
+      input: state.input,
+      result: state.input + action.input
+    };
+
+    case 'RESULT':
+    return{
+      ...state,
+      input: "",
+      result: eval(state.input).toString()
+    };
+
+    case 'RESET':
+    return initialState;
+
+    default:
+    return state;
   }
 }
