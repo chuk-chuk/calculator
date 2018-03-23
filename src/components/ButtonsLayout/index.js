@@ -4,23 +4,24 @@ import Button from '../Button';
 import { connect } from 'react-redux';
 
 class ButtonsLayout extends Component {
-  constructor(props){
-    super(props);
-  }
 
   passValue = (numberValue) => {
-    this.props.getValue(numberValue);
-    this.props.dispatch({type: 'addNumberToStore', number: numberValue});
+    console.log('Im inside passValue', numberValue);
+    if (numberValue === '='){
+
+      this.props.dispatch({type: 'RESULT'});
+    } else {
+
+      this.props.dispatch({type: 'ADD_NUMBER_TO_STORE', number: numberValue});
+    }
     console.log(numberValue);
   };
 
-
-  passReset = (e) => {
-    this.props.resetValue(e);
+  passReset = (numberValue) => {
+    this.props.dispatch({type: 'RESET', number: numberValue})
   };
 
   render() {
-    console.log("PROPS", this.props);
     return (
       <div>
         <div className={ styles.Rows }>
@@ -61,10 +62,4 @@ class ButtonsLayout extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {}
-}
-
-export default connect(
-  mapStateToProps
-)(ButtonsLayout)
+export default connect()(ButtonsLayout)

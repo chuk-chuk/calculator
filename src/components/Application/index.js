@@ -5,55 +5,35 @@ import Header from '../Header';
 import Footer from '../Footer';
 import InputField from '../InputField';
 import ButtonsLayout from '../ButtonsLayout';
+import { connect } from 'react-redux';
+// import { actionPressButton, addNumberToStore } from '../../reducer'
 
 class Application extends Component {
-  constructor(){
-    super();
-    this.state = {
-      clickedButton: '',
-      resultBox: '',
-    }
-  }
-
-  handleClick = (e) => {
-    const value = e;
-    switch(value) {
-      case '=': {
-        const answer = eval(this.state.clickedButton).toString();
-        this.setState({ resultBox: answer });
-        break;
-      }
-
-      default: {
-        this.setState({ clickedButton: this.state.clickedButton += value });  //adding to the string!!
-        break;
-      }
-    }
-  }
-
-  handleReset = () => {
-    this.setState({clickedButton:''});
-    this.setState({resultBox:''});
-  }
 
   render() {
+    const { clickedButton, resultBox } = this.props
+    console.log(this.props);
     return (
       <div>
         <Header />
-        <div className={styles.Application}> {/* these styles leave in application folder */}
+        <div className={styles.Application}>
             <div className={styles.InputFields}>
-              <InputField displayValue={ this.state.clickedButton }/>
-              <InputField displayValue={ this.state.resultBox }/>
+              <InputField displayValue={ clickedButton }/>
+              <InputField displayValue={ resultBox }/>
             </div>
-            <ButtonsLayout
-              getValue={ this.handleClick }
-              resetValue={ this.handleReset }
-            />
+            <ButtonsLayout/>
         </div>
         <Footer />
       </div>
     );
   }
 }
+// takes value out of the store
+const mapStateToProps = (state) => {
+  return {
+    clickedButton: state.input,
+    resultBox: state.result
+  }
+}
 
-export default Application;
+export default connect(mapStateToProps)(Application)
