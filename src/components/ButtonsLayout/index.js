@@ -2,23 +2,25 @@ import React, { Component } from 'react';
 import styles from './styles.scss';
 import Button from '../Button';
 import { connect } from 'react-redux';
+import { addNumberToStore, actionPressButton } from '../../action'
 
 class ButtonsLayout extends Component {
 
   passValue = (numberValue) => {
-    console.log('Im inside passValue', numberValue);
+    console.log('Im inside passValue', numberValue)
     if (numberValue === '='){
-
-      this.props.dispatch({type: 'RESULT'});
+      this.props.actionPressButton(numberValue)
+      // this.props.dispatch({type: 'RESULT'})
     } else {
-
-      this.props.dispatch({type: 'ADD_NUMBER_TO_STORE', number: numberValue});
+      this.props.addNumberToStore(numberValue);
+      // this.props.dispatch({type: 'ADD_NUMBER_TO_STORE', number: numberValue});
     }
-    console.log(numberValue);
+    console.log(numberValue)
   };
 
   passReset = (numberValue) => {
-    this.props.dispatch({type: 'RESET', number: numberValue})
+    this.props.actionPressButton(numberValue)
+    // this.props.dispatch({type: 'RESET', number: numberValue})
   };
 
   render() {
@@ -61,5 +63,12 @@ class ButtonsLayout extends Component {
     );
   }
 }
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+    addNumberToStore: (number) => dispatch(addNumberToStore(number)),
+    actionPressButton: (number) => dispatch(actionPressButton(number))
+  }
+}
 
-export default connect()(ButtonsLayout)
+export default connect(null, mapDispatchToProps)(ButtonsLayout);

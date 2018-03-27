@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 const operators = ['c', '/', '%', '+', '=', '-','*', '+/-']
 
-class Button extends Component  {
+class Button extends Component {
 
     constructor() {
         super();
