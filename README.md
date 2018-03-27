@@ -1,6 +1,6 @@
 # Calculator ➕ 🔢 ➗
 
-A simple lightweight react project made using react-create-app
+A simple lightweight React/Redux project made using react-create-app
 
 ## How to get started
 - Pull the repo
@@ -10,7 +10,6 @@ A simple lightweight react project made using react-create-app
 
 ## Tools used in the project
 - React 15.6
-- Unit testing with jest
 - ESLinting with AirBnB
 - CSS Modules
 - SASS
@@ -20,3 +19,9 @@ A simple lightweight react project made using react-create-app
 
 ##State Management
 - Redux
+
+##Testing
+- `npm test -- --coverage`
+- Unit testing with Jest
+- Enzyme, JS testing utility to assert React Components
+- Open the `index.html` from `coverage` folder to see the report in a browser
