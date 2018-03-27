@@ -1,31 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Button from '../Button';
+import ReactDOM from 'react-dom';
 
 import { shallow } from 'enzyme';
 
 describe('<Button />', () => {
-    let wrapper;
+  let wrapper, spy
 
-    beforeEach(() => {
-        const onClick = jest.fn();
-        wrapper = shallow(<Button onClick={onClick} />);
-    });
+  beforeEach(() => {
+    spy = jest.fn()
+    wrapper = shallow(<Button clickMe={spy} />)
+  })
 
-    it('renders the button', () => {
+  it('renders the button', () => {
+    expect(wrapper.find('button').length).toBe(1)
+  })
 
-        expect(wrapper.find('button').length).toBe(1);
-
-    });
-
-    it('renders a button value', () => {
-
-        const onClick = jest.fn();
-        wrapper = shallow(<Button onClick={onClick} />);
-
-        wrapper.prop('onClick')();
-
-        expect(wrapper.prop('onClick')).toBeCalled();
-
-    });
-
-});
+  it('renders a button value', () => {
+    wrapper.find('button').simulate('click')
+    expect(spy).toHaveBeenCalled()
+  })
+})

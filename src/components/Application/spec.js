@@ -15,34 +15,33 @@ describe('<Application />', () => {
   const initialState = { clickedButton: '', resultBox: ''}
   const mockStore = configureStore()
   let wrapper, store
-// rewirte this test with provider and create the store
 
   beforeEach(() => {
     store = mockStore(initialState)
-    wrapper = mount(<Provider store={store}><Application/></Provider>);
+    wrapper = mount(<Provider store={store}><Application/></Provider>)
   })
 
   it('prop clickedButton matches with initialState', () => {
       expect(wrapper.find(Application).prop('clickedButton')).toEqual(initialState.input)
-   });
+   })
 
   it('prop resultBox matches with initialState', () => {
       expect(wrapper.find(Application).prop('resultBox')).toEqual(initialState.result)
-   });
+   })
 
   it('renders one <Header /> component', () => {
-    expect(wrapper.find(Application).length).toBe(1);
-  });
+    expect(wrapper.find(Application).length).toBe(1)
+  })
 
   it('renders one <Footer /> component', () => {
-    expect(wrapper.find(Footer).length).toBe(1);
-  });
+    expect(wrapper.find(Footer).length).toBe(1)
+  })
 
   it('renders one <Footer /> component', () => {
-    expect(wrapper.find(Header).length).toBe(1);
-  });
+    expect(wrapper.find(Header).length).toBe(1)
+  })
 
   it('renders two <InputField /> components', () =>{
-    expect(wrapper.find(InputField).length).toBe(2);
+    expect(wrapper.find(InputField).length).toBe(2)
   })
-});
+})
