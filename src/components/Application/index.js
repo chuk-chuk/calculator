@@ -1,37 +1,27 @@
-import React, { Component } from 'react'
-import styles from './styles.scss'
-
 import Header from '../Header'
+import About from '../About'
+import Welcome from '../Welcome'
+import ConnectedCalc from '../Calculator'
 import Footer from '../Footer'
-import InputField from '../InputField'
-import ButtonsLayout from '../ButtonsLayout'
+
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class Application extends Component {
-
   render() {
-    const { clickedButton, resultBox } = this.props
     return (
+      <Router>
       <div>
         <Header />
-        <div className={styles.Application}>
-            <div className={styles.InputFields}>
-              <InputField displayValue={ clickedButton }/>
-              <InputField displayValue={ resultBox }/>
-            </div>
-            <ButtonsLayout/>
-        </div>
+          <Route exact path="/" component={Welcome}/>
+          <Route path="/about" component={About}/>
+          <Route path="/calculator" component={ConnectedCalc}/>
         <Footer />
       </div>
-    );
-  }
-}
-// takes value out of the store
-const mapStateToProps = (state) => {
-  return {
-    clickedButton: state.input,
-    resultBox: state.result
+    </Router>
+    )
   }
 }
 
-export default connect(mapStateToProps)(Application)
+export default Application
