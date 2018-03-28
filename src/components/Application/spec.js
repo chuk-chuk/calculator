@@ -1,10 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
 import Header from '../Header'
 import Footer from '../Footer'
-import InputField from '../InputField'
 import Application from '../Application'
 
+import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount, shallow } from 'enzyme'
 import configureStore from 'redux-mock-store'
@@ -39,9 +37,5 @@ describe('<Application />', () => {
 
   it('renders one <Footer /> component', () => {
     expect(wrapper.find(Header).length).toBe(1)
-  })
-
-  it('renders two <InputField /> components', () =>{
-    expect(wrapper.find(InputField).length).toBe(2)
   })
 })
