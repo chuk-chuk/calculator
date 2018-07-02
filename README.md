@@ -1,12 +1,12 @@
 # Calculator ➕ 🔢 ➗
 
-A simple lightweight React/Redux project made using react-create-app
+A simple lightweight React/Redux project made using react-create-app. As a part of my learning process as setup up routing in the parent component for easy section navigation.
 
 ## How to get started
 - Pull the repo
 - `npm install`
 - `npm start`
-- Head to localhost:3000
+- Head to http://localhost:3000/calculator
 
 ## Tools used in the project
 - React 15.6
